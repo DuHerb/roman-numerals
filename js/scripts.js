@@ -8,8 +8,8 @@
 
 $(document).ready(function(){
     $("form").submit(function(event) {
-      debugger;
-      var input = $("#input").val();
+      // debugger;
+      var input = parseInt($("#input").val());
       // console.log(convertToRoman(input));
       // console.log(placeCounter(input, 2));
       // console.log(getNumOfDigits(input));
@@ -21,15 +21,13 @@ $(document).ready(function(){
  });
 
 function convertToRoman(value){
-
-
-  if (value<3,999 && value >0){
+  if (value < 3999 && value > 0){
     return digitToSymbol(value);
   } else {
       alert("Invalid Number");
     return "error";
   }
-  }
+}
 
   function digitToSymbol(input){
     var numDigits = input.toString().length;
@@ -74,8 +72,10 @@ function convertToRoman(value){
 
 function symOnes(value){
   switch(value) {
+    case 0:
+      return "";
+      break;
     case 1 :
-    alert("Invalid Number");
       return "I";
       break;
     case 2 :
@@ -107,6 +107,9 @@ function symOnes(value){
 
 function symTens(value){
   switch(value) {
+    case 0:
+      return "";
+      break;
     case 1 :
       return "X";
       break;
@@ -139,6 +142,9 @@ function symTens(value){
 
 function symHundreds(value){
   switch(value) {
+    case 0:
+      return "";
+      break;
     case 1 :
       return "C";
       break;
@@ -171,6 +177,9 @@ function symHundreds(value){
 
 function symThousands(value){
   switch(value) {
+    case 0:
+      return "";
+      break;
     case 1 :
       return "M";
       break;
